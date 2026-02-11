@@ -1,4 +1,4 @@
-const API_KEY = "bd5e378503939ddaee76f12ad7a97608";
+const API_KEY = "7e59c4c1c08d99748fa5c618d0766e57";
 
 const cityInput = document.getElementById("cityInput");
 const searchBtn = document.getElementById("searchBtn");
@@ -16,7 +16,7 @@ cityInput.addEventListener("keydown", (e) => {
 });
 
 async function fetchWeather() {
-  const city = cityInput.value.trim();
+  const city = cityInput.value.trim().toLowerCase();
 
   if (!city) {
     alert("Please enter a city name");
@@ -27,7 +27,6 @@ async function fetchWeather() {
 
   try {
     const response = await fetch(url);
-
     if (!response.ok) {
       throw new Error("City not found");
     }
